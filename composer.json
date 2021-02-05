@@ -1,0 +1,32 @@
+{
+    "name": "konekt/extended-logger",
+    "description": "An Extended PSR-3 Compatible Logger",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["log", "psr", "psr-3", "konekt", "artkonekt"],
+    "support": {
+        "source": "https://github.com/artkonekt/extended-logger"
+    },
+    "authors": [
+        {
+            "name": "Attila Fulop",
+            "homepage": "https://github.com/fulopattila122"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "psr/log": "^1.0",
+        "nesbot/carbon": "^2.17"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": { "Konekt\\ExtLogger\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Konekt\\ExtLogger\\Tests\\": "tests/"
+        }
+    }
+}

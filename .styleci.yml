@@ -1,0 +1,6 @@
+preset: psr12
+risky: true
+enabled:
+  - alpha_ordered_imports
+  - no_extra_block_blank_lines
+  - no_extra_consecutive_blank_lines
