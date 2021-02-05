@@ -18,13 +18,14 @@ use Carbon\Carbon;
 use Carbon\CarbonTimeZone;
 use Closure;
 use Konekt\ExtLogger\Contracts\ExtPsrLogger;
+use Konekt\ExtLogger\Contracts\FileCapableLogger;
 use Konekt\ExtLogger\ExtLogLevel;
 use Psr\Log\LoggerTrait;
 
 /**
  * Logs errors in "Python format" so that Datadog can beautifully parse it
  */
-class PythonLogger implements ExtPsrLogger
+class PythonLogger implements ExtPsrLogger, FileCapableLogger
 {
     use LoggerTrait;
 
@@ -41,7 +42,7 @@ class PythonLogger implements ExtPsrLogger
         $this->output = fn (string $line) => print("$line\n");
     }
 
-    public function useFileAsOutput(string $file)
+    public function useFileAsOutput(string $file): void
     {
         $this->output = fn (string $line) => file_put_contents($file, "$line\n", FILE_APPEND);
     }
