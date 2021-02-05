@@ -14,10 +14,10 @@ declare(strict_types=1);
 
 namespace Konekt\ExtLogger\Utils\Laravel;
 
-use Konekt\ExtLogger\Contracts\ExtPsrLogger;
 use Konekt\ExtLogger\Contracts\FileCapableLogger;
 use Konekt\ExtLogger\Loggers\LaravelCommandLogger;
 use Konekt\ExtLogger\Loggers\PythonLogger;
+use Psr\Log\LoggerInterface;
 
 /**
  * Use this trait on Laravel console commands to be able to log either
@@ -33,7 +33,7 @@ trait HasContextualLogger
      *  {--B|batch-mode : Logs in JSON format if set}
      */
 
-    private ExtPsrLogger $logger;
+    private LoggerInterface $logger;
 
     private function initLogger(): void
     {
@@ -50,7 +50,7 @@ trait HasContextualLogger
         $this->logger = new LaravelCommandLogger($this);
     }
 
-    private function getBatchLogger(): ExtPsrLogger
+    private function getBatchLogger(): LoggerInterface
     {
         if (method_exists($this, 'createBatchLogger')) {
             return $this->createBatchLogger();
