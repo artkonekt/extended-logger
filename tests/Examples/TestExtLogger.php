@@ -89,7 +89,7 @@ class TestExtLogger implements ExtPsrLogger
             } elseif (is_object($val)) {
                 $replacements[$placeholder] = '[object ' . get_class($val) . ']';
             } elseif (is_array($val)) {
-                $replacements[$placeholder] = 'array'. json_encode($val);
+                $replacements[$placeholder] = 'array' . json_encode($val);
             } else {
                 $replacements[$placeholder] = '[' . gettype($val) . ']';
             }
