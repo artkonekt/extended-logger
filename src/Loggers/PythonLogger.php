@@ -17,6 +17,7 @@ namespace Konekt\ExtLogger\Loggers;
 use Carbon\Carbon;
 use Carbon\CarbonTimeZone;
 use Closure;
+use Konekt\ExtLogger\Concerns\FormatsContextualExceptions;
 use Konekt\ExtLogger\Contracts\ExtPsrLogger;
 use Konekt\ExtLogger\Contracts\FileCapableLogger;
 use Konekt\ExtLogger\ExtLogLevel;
@@ -28,6 +29,7 @@ use Psr\Log\LoggerTrait;
 class PythonLogger implements ExtPsrLogger, FileCapableLogger
 {
     use LoggerTrait;
+    use FormatsContextualExceptions;
 
     private string $serviceName;
 
@@ -54,6 +56,8 @@ class PythonLogger implements ExtPsrLogger, FileCapableLogger
 
     public function log($level, $message, array $context = [])
     {
+        $context = $this->convertExceptionsToLoggableArray($context);
+
         $this->output->call($this, json_encode(array_merge($context, [
             'asctime' => Carbon::now($this->timeZone),
             'name' => $this->serviceName,

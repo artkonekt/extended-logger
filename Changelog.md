@@ -1,5 +1,10 @@
 # Extended PSR Logger Changelog
 
+## Unreleased
+##### 2021-XX-XX
+
+- Added the missing PSR compliant contextual exception handling to `PythonJsonLogger`
+
 ## 1.0.0
 ##### 2021-02-05
 

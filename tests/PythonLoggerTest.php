@@ -15,7 +15,9 @@ declare(strict_types=1);
 namespace Konekt\ExtLogger\Tests;
 
 use Carbon\Carbon;
+use Exception;
 use Konekt\ExtLogger\Loggers\PythonLogger;
+use Konekt\ExtLogger\Tests\Examples\ExampleException;
 use PHPUnit\Framework\TestCase;
 
 class PythonLoggerTest extends TestCase
@@ -45,6 +47,42 @@ class PythonLoggerTest extends TestCase
         $this->getLogger('svcname')->error('Meeh');
 
         $this->expectOutputString('{"asctime":"2021-02-03T09:00:00.000000Z","name":"svcname","levelname":"ERROR","message":"Meeh"}' . "\n");
+    }
+
+    /** @test */
+    public function it_logs_exceptions_if_an_exception_object_is_passed_as_the_value_under_exception_array_key()
+    {
+        Carbon::setTestNow('2021-05-06 16:47:00');
+        $this->getLogger('cicciolina')->error('Meeh', ['exception' => new \LogicException('This is illogical!')]);
+
+        $this->expectOutputString('{"exception":{"class":"LogicException","message":"This is illogical!"},"asctime":"2021-05-06T16:47:00.000000Z","name":"cicciolina","levelname":"ERROR","message":"Meeh"}' . "\n");
+    }
+
+    /** @test */
+    public function it_logs_the_fqcn_of_exceptions()
+    {
+        Carbon::setTestNow('2021-05-06 16:47:00');
+        $this->getLogger('cicciolina')->error('Meeh', ['exception' => new ExampleException('Yo!')]);
+
+        $this->expectOutputString('{"exception":{"class":"Konekt\\\\ExtLogger\\\\Tests\\\\Examples\\\\ExampleException","message":"Yo!"},"asctime":"2021-05-06T16:47:00.000000Z","name":"cicciolina","levelname":"ERROR","message":"Meeh"}' . "\n");
+    }
+
+    /** @test */
+    public function it_returns_scalars_passed_as_exception_without_change()
+    {
+        Carbon::setTestNow('2021-05-06 16:47:00');
+        $this->getLogger('cicciolina')->error('Meeh', ['exception' => 'Hey!']);
+
+        $this->expectOutputString('{"exception":"Hey!","asctime":"2021-05-06T16:47:00.000000Z","name":"cicciolina","levelname":"ERROR","message":"Meeh"}' . "\n");
+    }
+
+    /** @test */
+    public function it_logs_the_classname_of_non_exception_objects_passed_as_exception()
+    {
+        Carbon::setTestNow('2021-05-06 16:47:00');
+        $this->getLogger('cicciolina')->error('Meeh', ['exception' => new \DateTime()]);
+
+        $this->expectOutputString('{"exception":{"class":"DateTime","message":"The passed object to the logger is not an exception"},"asctime":"2021-05-06T16:47:00.000000Z","name":"cicciolina","levelname":"ERROR","message":"Meeh"}' . "\n");
     }
 
     /** @test */
