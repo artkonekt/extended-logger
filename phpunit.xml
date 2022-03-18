@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    phpunit -c phpunit.xml
--->
-<phpunit colors="true"
-         bootstrap="./vendor/autoload.php">
+<phpunit xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         colors="true"
+         bootstrap="./vendor/autoload.php"
+>
     <testsuites>
         <testsuite name="Konekt Extended Logger Test Suite">
             <directory suffix="Test.php">./tests</directory>

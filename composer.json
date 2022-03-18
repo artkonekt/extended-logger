@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "psr/log": "^1.0",
+        "psr/log": "^2.0",
         "nesbot/carbon": "^2.17"
     },
     "require-dev": {
@@ -26,7 +26,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Konekt\\ExtLogger\\Tests\\": "tests/"
+            "Konekt\\ExtLogger\\Tests\\": "tests/",
+            "Psr\\Log\\Test\\": "tests/psr/"
         }
     }
 }
