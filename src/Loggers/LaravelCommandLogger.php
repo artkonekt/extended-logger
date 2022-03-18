@@ -54,12 +54,12 @@ class LaravelCommandLogger implements ExtPsrLogger
         $this->command = $command;
     }
 
-    public function ok(string $message, array $context = []): void
+    public function ok(string|\Stringable $message, array $context = []): void
     {
         $this->log(ExtLogLevel::OK, $message, $context);
     }
 
-    public function log($level, $message, array $context = [])
+    public function log($level, string|\Stringable $message, array $context = []): void
     {
         $exception = $context['exception'] ?? null;
         if ($exception instanceof Exception) {

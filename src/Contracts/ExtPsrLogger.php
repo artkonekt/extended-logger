@@ -19,5 +19,5 @@ use Psr\Log\LoggerInterface;
 interface ExtPsrLogger extends LoggerInterface
 {
     /** Logs a successful event */
-    public function ok(string $message, array $context = []): void;
+    public function ok(string|\Stringable $message, array $context = []): void;
 }

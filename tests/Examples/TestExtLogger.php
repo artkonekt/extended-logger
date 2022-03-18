@@ -31,12 +31,12 @@ class TestExtLogger implements ExtPsrLogger
 
     private array $records = [];
 
-    public function ok(string $message, array $context = []): void
+    public function ok(string|\Stringable $message, array $context = []): void
     {
         $this->log(ExtLogLevel::OK, $message, $context);
     }
 
-    public function log($level, $message, array $context = [])
+    public function log($level, string|\Stringable $message, array $context = []): void
     {
         if (!in_array($level, (new \ReflectionClass(ExtLogLevel::class))->getConstants())) {
             throw new InvalidArgumentException("Unknown level $level");

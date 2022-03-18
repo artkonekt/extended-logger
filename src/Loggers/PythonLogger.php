@@ -49,12 +49,12 @@ class PythonLogger implements ExtPsrLogger, FileCapableLogger
         $this->output = fn (string $line) => file_put_contents($file, "$line\n", FILE_APPEND);
     }
 
-    public function ok(string $message, array $context = []): void
+    public function ok(string|\Stringable $message, array $context = []): void
     {
         $this->log(ExtLogLevel::OK, $message, $context);
     }
 
-    public function log($level, $message, array $context = [])
+    public function log($level, string|\Stringable $message, array $context = []): void
     {
         $context = $this->convertExceptionsToLoggableArray($context);
 
