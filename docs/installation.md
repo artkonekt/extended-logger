@@ -1,5 +1,19 @@
 # Installation
 
+## PSR Log Compatibility
+
+This package is compatible with the [PSR Log](https://github.com/php-fig/log)
+package according to the table below:
+
+| PSR Log | EXT Logger (this package) |
+|---------|---------------------------|
+| 1.x     | 1.x                       |
+| 2.x     | 2.x                       |
+| 3.x     | 3.x                       |
+
+
+To install the package, use composer:
+
 ```bash
 composer require konekt/extended-logger
 ```
