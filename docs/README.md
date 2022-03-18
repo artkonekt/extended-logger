@@ -11,6 +11,7 @@ monitoring.
 
 - PSR-3 compliant (extends it)
 - Python (JSON) logger
+- PHP 8+
 - Laravel Command logger (logs to decorated Laravel console output)
 - Trait for Laravel commands to either log to output or to a file in different formats based on
   the arguments passed to the console command
