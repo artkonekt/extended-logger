@@ -1,7 +1,7 @@
 # Extended PSR Logger Changelog
 
-## Unreleased
-##### 2022-03-XX
+## 3.0.0
+##### 2022-03-18
 
 - Added compatibility with PSR Log v3
 - Removed compatibility with PSR Log v2
