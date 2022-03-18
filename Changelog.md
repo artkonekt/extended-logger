@@ -1,7 +1,7 @@
 # Extended PSR Logger Changelog
 
-## Unreleased
-##### 2022-03-XX
+## 1.2.0
+##### 2022-03-18
 
 - Added PHP 8.1 Support
 
