@@ -1,6 +1,6 @@
 # Extended PSR Logger
 
-[![Tests](https://img.shields.io/github/workflow/status/artkonekt/extended-logger/tests/master?style=flat-square)](https://github.com/artkonekt/extended-logger/actions?query=workflow%3Atests)
+[![Tests](https://img.shields.io/github/actions/workflow/status/artkonekt/extended-logger/tests.yml?master&style=flat-square)](https://github.com/artkonekt/extended-logger/actions?query=workflow%3Atests)
 [![Packagist Stable Version](https://img.shields.io/packagist/v/konekt/extended-logger.svg?style=flat-square&label=stable)](https://packagist.org/packages/konekt/extended-logger)
 [![Packagist downloads](https://img.shields.io/packagist/dt/konekt/extended-logger.svg?style=flat-square)](https://packagist.org/packages/konekt/extended-logger)
 [![StyleCI](https://styleci.io/repos/336267231/shield?branch=master)](https://styleci.io/repos/336267231)

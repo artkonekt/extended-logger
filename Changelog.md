@@ -6,6 +6,11 @@
 - Added compatibility with PSR Log v3
 - Removed compatibility with PSR Log v2
 
+## 2.0.1
+##### 2023-12-17
+
+- Added PHP 8.3 Support
+
 ## 2.0.0
 ##### 2022-03-18
 
