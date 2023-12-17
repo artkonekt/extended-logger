@@ -68,7 +68,7 @@ The output is JSON and it's written to stdout, but it can be redirected to file 
 ![output_batch_file](output_batch_file.png)
 
 In this mode, the log lines get directly written to the log file passed in the argument, and nothing
-gets written on the terminal output.
+gets written to the terminal output.
 
 ### Command Equipment
 

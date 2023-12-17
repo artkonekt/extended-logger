@@ -4,7 +4,7 @@ This logger extends the default PSR-3 log levels (`debug`, `info`, `warning`, et
 `OK` level.
 
 The scope of `OK` is to be able to send semantic "positive" logs to tools like Datadog in order to
-watch the successful execution of jobs. This can be useful for setting up log based hearbeat
+watch the successful execution of jobs. This can be useful for setting up log based heartbeat
 monitoring.
 
 ## Features
