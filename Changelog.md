@@ -1,7 +1,7 @@
 # Extended PSR Logger Changelog
 
-## Unreleased
-##### 2024-XX-YY
+## 3.1.0
+##### 2024-01-25
 
 - Changed the type of the private $logger in the `HasContextualLogger` trait from `LoggerInterface` to `LoggerInterface|ExtPsrLogger|ExtPsrLogger`
 
