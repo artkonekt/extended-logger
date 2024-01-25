@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Konekt\ExtLogger\Utils\Laravel;
 
+use Konekt\ExtLogger\Contracts\ExtPsrLogger;
 use Konekt\ExtLogger\Contracts\FileCapableLogger;
 use Konekt\ExtLogger\Loggers\LaravelCommandLogger;
 use Konekt\ExtLogger\Loggers\PythonLogger;
@@ -33,7 +34,7 @@ trait HasContextualLogger
      *  {--B|batch-mode : Logs in JSON format if set}
      */
 
-    private LoggerInterface $logger;
+    private LoggerInterface|ExtPsrLogger $logger;
 
     private function initLogger(): void
     {
