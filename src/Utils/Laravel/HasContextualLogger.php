@@ -84,6 +84,6 @@ trait HasContextualLogger
     {
         $optionName = property_exists($this, 'batchModeOptionName') ? $this->batchModeOptionName : 'batch-mode';
 
-        return $this->option($optionName);
+        return (bool) $this->option($optionName);
     }
 }
