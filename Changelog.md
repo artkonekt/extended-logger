@@ -1,7 +1,7 @@
 # Extended PSR Logger Changelog
 
-## Unreleased
-##### 2024-XX-YY
+## 3.1.1
+##### 2024-08-26
 
 - Fixed possible type error when passing a value to the batch mode option like `--batch-mode=1`
 
