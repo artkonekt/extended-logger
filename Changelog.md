@@ -1,5 +1,11 @@
 # Extended PSR Logger Changelog
 
+## Unreleased
+##### 2025-XX-YY
+
+- Added PHP 8.4 support
+- Dropped PHP 8.1 support
+
 ## 3.1.1
 ##### 2024-08-26
 

@@ -15,6 +15,6 @@ monitoring.
 
 ## Usage
 
-> **IMPORTANT**: This library requires PHP 8+
+> **IMPORTANT**: This library requires PHP 8.1+
 
 Refer to the [Documentation](https://konekt.dev/extended-logger/docs) for more details.
