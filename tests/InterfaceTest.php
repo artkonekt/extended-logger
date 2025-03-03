@@ -17,9 +17,9 @@ namespace Konekt\ExtLogger\Tests;
 use Konekt\ExtLogger\Contracts\ExtPsrLogger;
 use Konekt\ExtLogger\Tests\Examples\TestExtLogger;
 use Psr\Log\InvalidArgumentException;
-use Psr\Log\Test\LoggerInterfaceTest;
+use Psr\Log\Test\LoggerInterfaceTestCase;
 
-class InterfaceTest extends LoggerInterfaceTest
+class InterfaceTest extends LoggerInterfaceTestCase
 {
     private ?ExtPsrLogger $logger = null;
 

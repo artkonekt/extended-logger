@@ -12,7 +12,7 @@ use Psr\Log\LogLevel;
  * Implementors can extend the class and implement abstract methods to run this
  * as part of their test suite.
  */
-abstract class LoggerInterfaceTest extends TestCase
+abstract class LoggerInterfaceTestCase extends TestCase
 {
     /**
      * @return LoggerInterface
