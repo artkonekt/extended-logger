@@ -9,7 +9,7 @@ namespace Psr\Log\Test;
  *
  * @internal
  */
-class DummyTest
+class DummyThing
 {
     public function __toString()
     {

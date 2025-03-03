@@ -86,9 +86,9 @@ abstract class LoggerInterfaceTest extends TestCase
     public function testObjectCastToString()
     {
         if (method_exists($this, 'createPartialMock')) {
-            $dummy = $this->createPartialMock('Psr\Log\Test\DummyTest', array('__toString'));
+            $dummy = $this->createPartialMock('Psr\Log\Test\DummyThing', array('__toString'));
         } else {
-            $dummy = $this->getMock('Psr\Log\Test\DummyTest', array('__toString'));
+            $dummy = $this->getMock('Psr\Log\Test\DummyThing', array('__toString'));
         }
         $dummy->expects($this->once())
             ->method('__toString')
@@ -111,7 +111,7 @@ abstract class LoggerInterfaceTest extends TestCase
             'string' => 'Foo',
             'int' => 0,
             'float' => 0.5,
-            'nested' => array('with object' => new DummyTest()),
+            'nested' => array('with object' => new DummyThing()),
             'object' => new \DateTime(),
             'resource' => fopen('php://memory', 'r'),
             'closed' => $closed,
