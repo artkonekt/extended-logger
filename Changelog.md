@@ -1,5 +1,10 @@
 # Extended PSR Logger Changelog
 
+## Unreleased
+##### 2025-XX-YY
+
+- Added the `OutputRedirector` class which is a generic symfony output class that writes the messages to the passed logger
+
 ## 3.2.0
 ##### 2025-03-03
 
