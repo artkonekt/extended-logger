@@ -4,6 +4,8 @@
 ##### 2025-XX-YY
 
 - Added the `OutputRedirector` class which is a generic symfony output class that writes the messages to the passed logger
+- Added support for Carbon 3 (v3.8.4+)
+- Changed the minimal Carbon version to v2.72.6
 
 ## 3.2.0
 ##### 2025-03-03
