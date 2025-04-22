@@ -1,7 +1,7 @@
 # Extended PSR Logger Changelog
 
-## Unreleased
-##### 2025-XX-YY
+## 3.3.0
+##### 2025-04-22
 
 - Added the `OutputRedirector` class which is a generic symfony output class that writes the messages to the passed logger
 - Added support for Carbon 3 (v3.8.4+)
